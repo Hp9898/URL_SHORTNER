@@ -5,11 +5,42 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
             height: 100vh;
             margin: 0;
             background-color: #f0f0f0;
+        }
+
+        .navbar {
+            width: 100%;
+            background-color: #ffffff;
+            padding: 10px 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar .navbar-brand {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar .navbar-brand img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .navbar a {
+            color: #000000;
+            text-decoration: none;
+            font-size: 18px;
+            margin-right: 20px;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
         }
 
         .container {
@@ -20,6 +51,7 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             width: 80%;
             max-width: 600px;
+            margin-top: 20px;
         }
 
         .container h1 {
@@ -71,14 +103,44 @@
             color: #007bff;
             text-decoration: none;
         }
+
+        .image-container {
+            margin: 20px 0;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        #u1{
+            font-size: 20px;
+            font-weight: bold;
+            font-family :Verdana, Geneva, Tahoma, sans-serif;
+        }
     </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>URL Shortener</title>
 </head>
-<body>
-    <div class="container">
-        <h1>URL SHORTENER</h1>
+<body style="background-color: #b799eb";>
+    <div class="navbar">
+        <div class="navbar-brand">
+        <img src="data:image/png;base64,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" alt="Logo">
+            <a id="u1">URL SHORTENER</a>
+        </div>
+        <div class="navbar-links">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
+
+    <div class="container" style="background-color: #ffffff";>
+
+        <div class="image-container">
+            <img src="https://seo-hacker.com/wp-content/uploads/2018/04/Best-URL-Shortening-Tools-For-2018-.jpg" alt="URL Shortener">
+        </div>
         <% if (locals.id) { %>
             <p>URL GENERATED: <a href="http://localhost:8002/<%= id %>">http://localhost:8002/<%= id %></a></p>
         <% } %>
@@ -91,3 +153,4 @@
     </div>
 </body>
 </html>
+
